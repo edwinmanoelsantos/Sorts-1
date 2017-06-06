@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class BubbleSort {
+
+	static int[] array = { 5, 4, 3, 2, 1 };
+
+	public static void main(String[] args) {
+
+		System.out.println("Vetor: " + Arrays.toString(array));
+
+		int m, a, b;
+		int trocou = 1; //mostra a quantidade de vezes que foi feita a troca
+		int j = array.length;
+
+		for (m = 0; m < array.length - 1; m++) {
+
+			for (a = 0; a < array.length - 1; a++, j--) {
+
+				if (array[a] > array[a + 1]) { //Se array de [0] = 5 for maior que o array [1] = 4
+					b = array[a];              //Então, b recebe = array de [0], b = 5
+					array[a] = array[a + 1];   //E array [0] = 5 recebe array [1] = 4, array [0] agora é 4
+					array[a + 1] = b;          //Array [1] = 4 recebe a variável b = 5, ou seja array [1] = 5
+
+					System.out.println(Arrays.toString(array) + " trocou = " + trocou++);
+
+				}
+
+			}
+		}
+	}
+}
